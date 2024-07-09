@@ -9,8 +9,7 @@ file_path = os.path.join(os.getcwd(), '../data/german/CHILDES-DE.txt')
 print("Does the file exist?", os.path.exists(file_path))
 
 pairs, feature_space = load_german_CHILDES()
-atp = ATP(feature_space=feature_space)
-atp.train(pairs)
+atp = ATP(feature_space=feature_space).train(pairs)
 atp.plot_tree('../temp/german', open_pdf=True) # plot the tree and save it to a PDF file
 atp.inflect('Sache', ('F'))
 atp.inflect('Gleis', ('N'))
